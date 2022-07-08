@@ -14,11 +14,11 @@ A simple and easy way to create a welcome message on a WordPress website.
 
 == Description ==
 
-WelcomeWP is a WordPress plugin, designed to show a welcome message on a WordPress website.
+WelcomeWP helps to display a welcome message on a website.
 
-The plugin uses a native WordPress API to provide an intuitive and a secure experience of creating a short message in a foreground of the website content, while keeping the website readable.
+The plugin uses native WordPress API to provide intuitive and secure experience of creating a website welcome message in a foreground, while keeping the website itself readable.
 
-Use a welcome message to elevate your customer support, marketing, sales, etc.
+Use a welcome message to communicate with a website audience without being intrusive and to elevate customer support, marketing, sales, etc.
 
 == Installation ==
 
@@ -28,6 +28,11 @@ Use a welcome message to elevate your customer support, marketing, sales, etc.
 
 == Screenshots ==
 
+1. Example of a welcome message, with and active excerpt and custom colors. The message is set to be displayed only in archive views.
+2. Example of a welcome message, with and active excerpt and featured image. The message is set to be displayed only in singular views.
+3. Example of a welcome message, without excerpt and featured image, yet with custom colors. The message is set to be displayed on all pages in the left bottom corner of the screen.
+4. Example of the settings page for the plugin.
+
 == Frequently Asked Questions ==
 
 = What is a welcome message ? =
@@ -36,7 +41,7 @@ It is a short text within in a small window that appears in a front of the websi
 
 A website visitor can close the message when needed.
 
-= How it works ? =
+= How the plugin works ? =
 
 After installing and activating the plugin, Greeters link is added to sidebar in dashboard.
 
@@ -46,12 +51,12 @@ The Greeters functionality has a similar interface to Posts and Pages. It allows
 
 The plugin allows to have a maximum of three (3) active greeters with different display options.
 
-**Available display options:**
+Here is a list of available display options:
 
-* **Inactive**: Greeter with this option is not visible to any website visitors.
-* **All pages**: Greeter with this option displays a welcome message on all pages of a website, unless other greeters with Singular or Archive display option are set.
-* **Singular views**: Greeter with this option displays a welcome message in single-view pages.
-* **Archive views**: Greeter with this option displays a welcome message in archive views, including a blog page.
+* **Inactive** - Greeter with this option is not visible to any website visitors.
+* **All pages** - Greeter with this option displays a welcome message on all pages of a website, unless other greeters with Singular or Archive display option are set.
+* **Singular views** - Greeter with this option displays a welcome message in single-view pages.
+* **Archive views** - Greeter with this option displays a welcome message in archive views, including a blog page.
 
 = Is a welcome message customizable? =
 
@@ -74,9 +79,13 @@ Note, each message includes a close button for a better user experience
 
 The plugin uses cookie web technology to let the user's browser know which message, based on message ID, should be marked as closed, after the user clicks close button.
 
-This marking has an expiration time, which is by default 5 minutes. The plugin allows to configure it (Settings > WelcomeWP).
+This marking has an expiration time, which is by default 5 minutes. The plugin allows to configure it (*Settings > WelcomeWP*).
 
 Also, the user can clear this information from browser any time using browser cleaning functionality.
+
+= Where to report a bug? =
+
+Please use a [support forum](https://wordpress.org/support/plugin/welcomewp/).
 
 == Changelog ==
 
