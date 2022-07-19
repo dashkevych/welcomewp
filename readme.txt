@@ -18,13 +18,31 @@ WelcomeWP helps to display a welcome message on a website.
 
 The plugin uses native WordPress API to provide intuitive and secure experience of creating a website welcome message in a foreground, while keeping the website itself readable.
 
-Use a welcome message to communicate with a website audience without being intrusive and to elevate customer support, marketing, sales, etc.
+Use a welcome message to communicate with your audience without being intrusive, and to elevate customer support, marketing, sales, etc.
 
 == Installation ==
 
-1. Unzip and Upload the directory 'welcomewp' to the '/wp-content/plugins/' directory
+There are two ways to install the plugin. Choose the one that best fits your needs.
 
-2. Activate the plugin through the 'Plugins' menu in WordPress
+Automatic method:
+
+1. Login to your WordPress admin and go to *Plugins > Add New*
+2. Type "WelcomeWP" in the search bar and select this plugin
+3. Click "Install", and then "Activate Plugin"
+4. See "After activation" below
+
+Manual method:
+
+1. Download the plugin from WordPress.org
+2. Unzip and Upload the directory `welcomewp` to the `/wp-content/plugins/` directory
+3. Activate the plugin through the Plugins menu in WordPress
+4. See "After activation" below
+
+After activation:
+
+1. Locate Greeters link in the WordPress dashboard navigation menu (sidebar)
+2. Add, Edit, or Remove a Greeter (Greeter = welcome message)
+3. Set global settings in *Settings > WelcomeWP*
 
 == Screenshots ==
 
