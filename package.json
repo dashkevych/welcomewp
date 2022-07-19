@@ -1,0 +1,36 @@
+{
+  "name": "welcomewp",
+  "version": "1.0.0",
+  "description": "simple and easy way to create a welcome message on a WordPress website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashkevych/welcomewp.git"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "welcome",
+    "message"
+  ],
+  "author": "Taras Dashkevych",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dashkevych/welcomewp/issues"
+  },
+  "homepage": "https://github.com/dashkevych/welcomewp#readme",
+  "devDependencies": {
+    "cssnano": "^5.1.12",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "perfectionist": "^2.4.0",
+    "postcss": "^8.4.14",
+    "postcss-discard-comments": "^5.1.2",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-preset-env": "^7.7.2"
+  }
+}

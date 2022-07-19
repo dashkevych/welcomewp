@@ -1,0 +1,42 @@
+
+
+/* global form controls */
+.wwp-form-inline-control {
+    display: flex;
+    gap: 1em;
+}
+
+.wwp-description {
+    max-width: 50ch;
+}
+
+.wwp-cookie-expiration > :first-child {
+    margin-block-start: 0;
+}
+
+.wwp-cookie-expiration + details {
+    margin-block-start: 1em;
+}
+
+.wwp-clear-cache {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.wwp-form-notice {
+    display: none;
+}
+
+.wwp-form-notice[aria-hidden="false"] {
+    display: block;
+    font-weight: bold;
+}
+
+#wwp-clear-cache-updated {
+    color: green;
+}
+
+#wwp-clear-cache-error {
+    color: red;
+}
