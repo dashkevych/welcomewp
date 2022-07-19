@@ -91,8 +91,11 @@ class WelcomeWP_Greeter {
             add_action( 'init', array( $this, 'register_cpt' ), 1 );
         }
 
+        // Load scripts needed for admin panel.
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+        // Enable metaboxes.
         add_action( 'add_meta_boxes',        array( $this, 'add_metabox' ) );
+        // Save post.
         add_action( 'save_post',             array( $this, 'save_post' ) );
 
         // Create a message.
@@ -342,6 +345,8 @@ class WelcomeWP_Greeter {
 	 * @since 1.0.0
 	 */
     public function admin_enqueue_scripts() {
+        $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
         wp_enqueue_style( 'wp-color-picker');
 		wp_enqueue_script( 'wp-color-picker');
 
@@ -352,9 +357,9 @@ class WelcomeWP_Greeter {
 
         wp_enqueue_style(
 			'welcomewp-admin-cpt',
-			WELCOMEWP_PLUGIN_URL . 'assets/css/admin-cpt.css',
+			WELCOMEWP_PLUGIN_URL . "assets/css/admin/cpt{$suffix}.css",
 			array(),
-			'0.0.1'
+			'1.0.1'
 		);
     }
 

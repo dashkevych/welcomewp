@@ -75,12 +75,14 @@ class WelcomeWP_Message {
 	 * @since 1.0.0
 	 */
     public function enqueue_style() {
+        $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
         // Load base styles of a message.
         wp_enqueue_style(
 			'welcomewp-base',
-			WELCOMEWP_PLUGIN_URL . 'assets/css/base.css',
+			WELCOMEWP_PLUGIN_URL . "assets/css/public/base{$suffix}.css",
 			array(),
-			'0.0.1'
+			'1.0.1'
 		);
 
         // Load custom styles of a message.

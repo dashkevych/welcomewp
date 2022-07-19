@@ -1,0 +1,273 @@
+.welcomewp-message {
+    --wwp--color--background: #ffffff;
+    --wwp--color--text: #000000;
+    --wwp--color--link: #007cba;
+
+    max-width: 340px;
+    max-height: 80vh;
+    position: fixed;
+    background-color: var(--wwp--color--background);
+    color: var(--wwp--color--text);
+    border: 1px solid;
+    -webkit-animation: slide 0.5s forwards;
+            animation: slide 0.5s forwards;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+[class*="welcomewp-message__"] > :first-child {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+}
+
+[class*="welcomewp-message__"] > :last-child {
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+}
+
+.welcomewp-message > details[open] > summary {
+    -webkit-border-after: 1px solid;
+            border-block-end: 1px solid;
+}
+
+.welcomewp-message > details:not([open]) > summary {
+    cursor: pointer;
+}
+
+.welcomewp-message.has-thumbnail > details[open] .welcomewp-message__header {
+    display: none;
+}
+
+/**
+ * Link: Global
+ */
+
+.welcomewp-message a {
+    color: var(--wwp--color--link);
+}
+
+.welcomewp-message a:hover {
+    color: inherit;
+}
+
+/**
+ * Utilities: Hiding class, making content visible only to screen readers but not visually
+ */
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+            clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/**
+ * Position: Global
+ */
+
+@media screen and (max-width: 782px) {
+    #welcomewp-message[data-message-position="left-bottom"],
+    #welcomewp-message[data-message-position="right-bottom"] {
+        inset: auto 1em 1em 1em;
+        inset: auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em);
+        max-width: 100%;
+    }
+}
+
+/**
+ * Position: Left
+ */
+
+.welcomewp-message[data-message-position="left-bottom"] {
+    inset: auto auto 1em 1em;
+    inset: auto auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em);
+}
+
+.welcomewp-message[data-message-position="left-bottom"] .welcomewp-message__footer {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+@media screen and (min-width: 782px) {
+    .welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__thumb {
+        -webkit-box-ordinal-group: 3;
+            -ms-flex-order: 2;
+                order: 2;
+    }
+
+    .welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__excerpt {
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+        padding-inline: 1em 0;
+    }
+
+    .welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__header .welcomewp-message__close-button {
+        inset-inline: 0.5em auto;
+    }
+}
+
+/**
+ * Position: Right
+ */
+
+.welcomewp-message[data-message-position="right-bottom"] {
+    inset: auto 1em 1em auto;
+    inset: auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) auto;
+}
+
+.welcomewp-message[data-message-position="right-bottom"] .welcomewp-message__footer {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+}
+
+/**
+ * Active excerpt.
+ */
+
+.welcomewp-message.has-excerpt .welcomewp-message__excerpt {
+    -webkit-padding-end: 1em;
+            padding-inline-end: 1em;
+    -webkit-padding-start: 0.125em;
+            padding-inline-start: 0.125em;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 0%;
+            flex: 1 1 0%;
+}
+
+/**
+ * Active thumbnail + excerpt.
+ */
+
+.welcomewp-message.has-thumbnail.has-excerpt .welcomewp-message__header {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+/**
+ * Header
+ */
+
+.welcomewp-message__header {
+    font-weight: bold;
+    padding: 1em;
+    padding: var(--wp--style--block-gap, 1em);
+    line-height: 1.4;
+}
+
+.welcomewp-message__header::marker {
+    -webkit-margin-end: 1em;
+            margin-inline-end: 1em;
+}
+
+.welcomewp-message.has-thumbnail:not(.has-excerpt) .welcomewp-message__header {
+    padding: calc( 1em / 4 );
+    padding: calc( var(--wp--style--block-gap, 1em) / 4 );
+}
+
+.welcomewp-message__header .welcomewp-message__close-button {
+    position: absolute;
+    inset-block-start: 0.5em;
+    inset-inline-end: 0.5em;
+    z-index: 10;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding: 0.125em;
+    -webkit-margin-start: auto;
+            margin-inline-start: auto;
+}
+
+/**
+ * Content
+ */
+
+.welcomewp-message__content {
+    padding: 1em;
+    padding: var(--wp--style--block-gap, 1em);
+}
+
+/**
+ * Footer
+ */
+
+.welcomewp-message__footer {
+    padding: 1em;
+    padding: var(--wp--style--block-gap, 1em);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0.5em;
+}
+
+/**
+ * Thumbnail
+ */
+
+.welcomewp-message.has-thumbnail .welcomewp-message__header::-webkit-details-marker {
+    display: none;
+}
+
+.welcomewp-message__thumb {
+    margin: 0;
+    line-height: 0;
+}
+
+/**
+ * Close button
+ */
+
+.welcomewp-message__close-button {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+    font-weight: bolder;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    line-height: 1;
+    gap: 0.5em
+}
+
+.welcomewp-message__close-button:hover {
+    color: var(--wwp--color--link);
+}
+
+/* states */
+
+#welcomewp-message[aria-hidden="true"] {
+    display: none;
+}
+
+/* active admin bar */
+
+.admin-bar .welcomewp-message {
+    -webkit-margin-before: calc( 32px + 1em );
+            margin-block-start: calc( 32px + 1em );
+    -webkit-margin-before: calc( 32px + var(--wp--style--block-gap, 1em) );
+            margin-block-start: calc( 32px + var(--wp--style--block-gap, 1em) );
+}
