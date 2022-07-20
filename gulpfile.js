@@ -5,6 +5,8 @@ const postcssPresetEnv  = require('postcss-preset-env');
 const rename            = require('gulp-rename');
 const cssnano           = require('cssnano');
 const discardComments   = require('postcss-discard-comments');
+const beautify          = require('gulp-jsbeautifier');
+const minify            = require('gulp-minify');
 
 function styles(cb) {
   const postcssPlugins = [
@@ -18,8 +20,9 @@ function styles(cb) {
       })
   ];
 
-return src('src/styles/**/*.css')
+  return src('src/styles/**/*.css')
     .pipe(postcss(postcssPlugins))
+    .pipe(beautify())
     .pipe(dest('assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(postcss([
@@ -29,4 +32,17 @@ return src('src/styles/**/*.css')
     .pipe(dest('assets/css'))
 }
 
+function scripts() {
+  return src('src/scripts/**/*.js')
+    .pipe(beautify())
+    .pipe(dest('assets/js'))
+    .pipe(minify({
+      ext:{
+        min:'.min.js'
+      }
+    }))
+    .pipe(dest('assets/js'))
+}
+
 exports.styles = styles
+exports.scripts = scripts
