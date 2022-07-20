@@ -72,8 +72,9 @@ if ( ! class_exists( 'WelcomeWP' ) ) :
                 self::$instance->load_textdomain();
                 self::$instance->includes();
 
-                $dashboard = new WelcomeWP_Dashboard();
-                $greeter   = new WelcomeWP_Greeter( $dashboard );
+                $pointerplus = new PointerPlus( array( 'prefix' => 'welcomewp' ) );
+                $dashboard   = new WelcomeWP_Dashboard();
+                $greeter     = new WelcomeWP_Greeter( $dashboard );
             }
 
             return self::$instance;
@@ -123,6 +124,7 @@ if ( ! class_exists( 'WelcomeWP' ) ) :
          */
         private function includes() {
             // Global includes.
+            require_once WELCOMEWP_PLUGIN_DIR . 'includes/class-pointerplus.php';
             require_once WELCOMEWP_PLUGIN_DIR . 'includes/class-dashboard.php';
             require_once WELCOMEWP_PLUGIN_DIR . 'includes/class-message.php';
             require_once WELCOMEWP_PLUGIN_DIR . 'includes/class-greeter.php';
