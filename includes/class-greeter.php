@@ -102,6 +102,11 @@ class WelcomeWP_Greeter {
         add_action( 'template_redirect', array( $this, 'create_message' ) );
         // Display a message.
         add_action( 'wp_footer',         array( $this, 'display_message' ) );
+
+        // Display onboarding hints if no posts have been created yet.
+        if ( ! $this->has_posts() ) {
+            add_filter( 'welcomewp-pointerplus_list', array( $this, 'init_onboarding' ), 10, 2 );
+        }
 	}
 
     /**
@@ -149,6 +154,27 @@ class WelcomeWP_Greeter {
 
         // Set active id if needed.
         $this->active_id = $id;
+    }
+
+    /**
+	 * Check availability of published CPT posts.
+	 *
+	 * @since 1.0.1
+	 */
+    public function has_posts() {
+        $has_posts = false;
+        $loop      = new WP_Query( array (
+            'post_type'      => $this->slug,
+            'posts_per_page' => 1,
+            'post_status'    => 'publish',
+            'fields'         => 'ids',
+        ) );
+
+        $has_posts = $loop->have_posts();
+
+        wp_reset_postdata();
+
+        return $has_posts;
     }
 
     /**
@@ -709,5 +735,87 @@ class WelcomeWP_Greeter {
 
         echo '</div><!-- .wwp-form-group -->';
         echo '</div><!-- .pagebox -->';
+    }
+
+    /**
+	 * Set up onboarding process.
+	 *
+	 * @since 1.0.0
+     * @param int $id ID of the greeter.
+	 */
+    public function init_onboarding() {
+        return array(
+            $this->slug . '_greeter' => array(
+                'selector'   => '#menu-posts-greeter',
+                'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
+                'text'       => esc_html__( 'Add New to open the Editor for a welcome message.', 'welcomewp' ),
+                'post_type'  => array( 'greeter' ),
+                'icon_class' => 'dashicons-nametag',
+                'width'      => 250,
+            ),
+
+            $this->slug . '_greeter_title' => array(
+                'selector'   => '#titlewrap',
+                'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
+                'text'       => esc_html__( 'Title serves as a name for your message. This title is not shown for website visitors. It is only for your own records.', 'welcomewp' ),
+                'post_type'  => array( 'greeter' ),
+                'icon_class' => 'dashicons-nametag',
+                'width'      => 250,
+                'edge'       => 'top',
+			    'align'      => 'left',
+                'next'       => $this->slug . '_greeter_content',
+            ),
+
+            $this->slug . '_greeter_content' => array(
+                'selector'   => '#wp-content-editor-container',
+                'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
+                'text'       => esc_html__( 'This is a main content of your message. The message without main content does not appear on a website.', 'welcomewp' ),
+                'post_type'  => array( 'greeter' ),
+                'icon_class' => 'dashicons-nametag',
+                'width'      => 250,
+                'edge'       => 'top',
+			    'align'      => 'left',
+                'next'       => $this->slug . '_greeter_excerpt',
+                'show'       => 'close'
+            ),
+
+            $this->slug . '_greeter_excerpt' => array(
+                'selector'   => '#postexcerpt',
+                'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
+                'text'       => esc_html__( '(Optional): This is a summary of your message. Use summary to add an accordion (toggle) functionality to a message.', 'welcomewp' ),
+                'post_type'  => array( 'greeter' ),
+                'icon_class' => 'dashicons-nametag',
+                'width'      => 250,
+                'edge'       => 'bottom',
+			    'align'      => 'left',
+                'next'       => $this->slug . '_greeter_image',
+                'show'       => 'close'
+            ),
+
+            $this->slug . '_greeter_image' => array(
+                'selector'   => '#postimagediv',
+                'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
+                'text'       => esc_html__( '(Optional): This is a thumbnail of your message. Use thumbnail to add an accordion (toggle) functionality to a message.', 'welcomewp' ),
+                'post_type'  => array( 'greeter' ),
+                'icon_class' => 'dashicons-nametag',
+                'width'      => 250,
+                'align'      => 'middle',
+	            'edge'       => 'right',
+                'next'       => $this->slug . '_greeter_conf',
+                'show'       => 'close'
+            ),
+
+            $this->slug . '_greeter_conf' => array(
+                'selector'   => '#welcomewp_greeter_options',
+                'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
+                'text'       => esc_html__( 'Additional options of a message. Use them to configure visibility of your message.', 'welcomewp' ),
+                'post_type'  => array( 'greeter' ),
+                'icon_class' => 'dashicons-nametag',
+                'width'      => 250,
+                'edge'       => 'bottom',
+			    'align'      => 'left',
+                'show'       => 'close'
+            ),
+        );
     }
 }
