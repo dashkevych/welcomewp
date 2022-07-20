@@ -90,12 +90,13 @@ class WelcomeWP_Message {
             'welcomewp-base',
             $this->get_inline_styles()
         );
+
         // Load JavaScript functionality of a message.
         wp_enqueue_script(
             'welcomewp-script',
-            WELCOMEWP_PLUGIN_URL . 'assets/js/public/base.js',
+            WELCOMEWP_PLUGIN_URL . "assets/js/public/base{$suffix}.js",
             array(),
-            '1.0.0',
+            '1.0.1',
             true
         );
     }
