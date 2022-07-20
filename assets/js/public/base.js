@@ -1,24 +1,24 @@
 "use strict";
 
-(function () {
+(function() {
 
     if ('loading' === document.readyState) {
-		// The DOM has not yet been loaded.
-		document.addEventListener('DOMContentLoaded', initMessage);
-	} else {
-		// The DOM has already been loaded.
-		initMessage();
-	}
+        // The DOM has not yet been loaded.
+        document.addEventListener('DOMContentLoaded', initMessage);
+    } else {
+        // The DOM has already been loaded.
+        initMessage();
+    }
 
     // Initiate the message when the DOM loads.
-	function initMessage() {
+    function initMessage() {
         const message = document.getElementById('welcomewp-message');
 
         if (!message) {
-			return;
-		}
+            return;
+        }
 
-        if ( isHidden(message) ) {
+        if (isHidden(message)) {
             hideMessage(message);
 
             return;
@@ -71,29 +71,29 @@
     }
 
     // Show message.
-    function showMessage( message ) {
+    function showMessage(message) {
         let closeButtons = message.querySelectorAll('.welcomewp-message__close-button');
 
         // Make sure close button exists.
         if (!closeButtons.length) {
-			return;
-		}
+            return;
+        }
 
         // Close the message.
-		const closeMessage = function () {
+        const closeMessage = function() {
             hideMessage(message);
         };
 
         // Add class to the main menu item if a dropdown menu would go off the screen.
-		for ( let i = 0; i < closeButtons.length; i++ ) {
-			closeButtons[i].addEventListener('click', closeMessage, false);
-		}
+        for (let i = 0; i < closeButtons.length; i++) {
+            closeButtons[i].addEventListener('click', closeMessage, false);
+        }
     }
 
     // Store a cookie.
-    function setCookie( cookieName, cookieValue, cookieExpiration ) {
+    function setCookie(cookieName, cookieValue, cookieExpiration) {
         // Make sure settings for expiration are present.
-        if ( !cookieExpiration ) {
+        if (!cookieExpiration) {
             return;
         }
 
@@ -101,18 +101,18 @@
         let expiryDate = new Date();
 
         // Set expiration date.
-        switch ( cookieExpiration['measurement'] ) {
+        switch (cookieExpiration['measurement']) {
             case 'minutes':
-                expiryDate.setTime( expiryDate.getTime() + ( cookieExpiration['interval'] * 60 * 1000 ) );
+                expiryDate.setTime(expiryDate.getTime() + (cookieExpiration['interval'] * 60 * 1000));
                 break;
             case 'hours':
-                expiryDate.setTime( expiryDate.getTime() + ( cookieExpiration['interval'] * 3600 * 1000 ) );
+                expiryDate.setTime(expiryDate.getTime() + (cookieExpiration['interval'] * 3600 * 1000));
                 break;
             case 'days':
-                expiryDate.setDate( expiryDate.getDate() + cookieExpiration['interval'] );
+                expiryDate.setDate(expiryDate.getDate() + cookieExpiration['interval']);
                 break;
             case 'months':
-                expiryDate.setMonth( expiryDate.getMonth() + cookieExpiration['interval'] );
+                expiryDate.setMonth(expiryDate.getMonth() + cookieExpiration['interval']);
                 break;
         }
 
@@ -142,16 +142,16 @@
         };
 
         const expireTimeString = message.getAttribute('data-message-expire-time');
-        const expireTimeArray  = expireTimeString.split('|');
+        const expireTimeArray = expireTimeString.split('|');
 
-        if ( expireTimeArray[0] !== undefined ) {
+        if (expireTimeArray[0] !== undefined) {
             settings['interval'] = parseInt(expireTimeArray[0]);
         }
 
-        if ( expireTimeArray[1] !== undefined ) {
-            const measurement = ['minutes','hours','days','months'];
+        if (expireTimeArray[1] !== undefined) {
+            const measurement = ['minutes', 'hours', 'days', 'months'];
 
-            if ( measurement.includes(expireTimeArray[1]) ) {
+            if (measurement.includes(expireTimeArray[1])) {
                 settings['measurement'] = expireTimeArray[1];
             }
         }
