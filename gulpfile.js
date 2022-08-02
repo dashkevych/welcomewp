@@ -7,6 +7,7 @@ const cssnano           = require('cssnano');
 const discardComments   = require('postcss-discard-comments');
 const beautify          = require('gulp-jsbeautifier');
 const minify            = require('gulp-minify');
+const zip               = require('gulp-zip');
 
 function styles(cb) {
   const postcssPlugins = [
@@ -44,5 +45,27 @@ function scripts() {
     .pipe(dest('assets/js'))
 }
 
+function compress() {
+  return src([
+      "./**",
+      "!src",
+      "!src/**",
+      "!_dist",
+      "!_dist/**",
+      "!node_module/",
+      "!node_modules/**",
+      "!gulpfile.js",
+      "!*.dist",
+      "!*.log",
+      "!*.DS_Store",
+      "!*.gitignore",
+      "!*.git",
+      "!*.json"
+    ])
+    .pipe(zip('welcomewp.zip'))
+    .pipe(dest('./_dist'))
+}
+
 exports.styles = styles
 exports.scripts = scripts
+exports.compress = compress
