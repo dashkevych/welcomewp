@@ -25,3 +25,12 @@
 .wwp-form-group__item .button.wp-color-result {
     margin: auto;
 }
+
+#display-inactive:checked + label {
+    color: red;
+    font-weight: bold;
+}
+
+.post-new-php.post-type-greeter .pp-greeter_new {
+    display: none !important;
+}

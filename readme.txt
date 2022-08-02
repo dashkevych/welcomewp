@@ -2,9 +2,9 @@
 Contributors: taskotr
 Author URI: https://www.tarascodes.com
 Requires at Least: 5.9
-Tested Up To: 6.0
-Tags: welcome message, greeting message, modal, message, note, alert, simple
-Stable tag: 1.0.0
+Tested Up To: 6.0.1
+Tags: welcome message, greeting message, modal, message, note, alert, notice message, announcements, sticky message, notification, conversion, marketing
+Stable tag: 1.0.1
 Requires PHP: 7.4
 Text Domain: welcomewp
 License: GPLv2 or later
@@ -18,13 +18,51 @@ WelcomeWP helps to display a welcome message on a website.
 
 The plugin uses native WordPress API to provide intuitive and secure experience of creating a website welcome message in a foreground, while keeping the website itself readable.
 
-Use a welcome message to communicate with a website audience without being intrusive and to elevate customer support, marketing, sales, etc.
+WelcomeWP can be useful for various needs:
+
+* Communicate with your audience without being intrusive
+* Increase user engagement on your website
+* Elevate customer support via custom notes and announcements
+* Boost sales and services of your business via promotions
+
+The plugin allows your welcome message to be expressed as a promotion, note, announcement, greeting, ect.
+
+[Demo #1](https://welcomewp.com/) | [Demo #2](https://welcomewp.com/introducing-welcomewp/)
+
+### Possible use-cases
+
+* Share links to social media, documentation, etc
+* Provide important announcements
+* Notify about terms and conditions changes
+* Introduce yourself to new website visitors
+* Greet website visitors
+* Inform about launch of new products or services
+* Offer time limited discount codes
+* Keep posted about COVID-19 updates
 
 == Installation ==
 
-1. Unzip and Upload the directory 'welcomewp' to the '/wp-content/plugins/' directory
+There are two ways to install the plugin. Choose the one that best fits your needs.
 
-2. Activate the plugin through the 'Plugins' menu in WordPress
+Automatic method:
+
+1. Login to your WordPress admin and go to *Plugins > Add New*
+2. Type "WelcomeWP" in the search bar and select this plugin
+3. Click "Install", and then "Activate Plugin"
+4. See "After activation" below
+
+Manual method:
+
+1. Download the plugin from WordPress.org
+2. Unzip and Upload the directory `welcomewp` to the `/wp-content/plugins/` directory
+3. Activate the plugin through the Plugins menu in WordPress
+4. See "After activation" below
+
+After activation:
+
+1. Locate Greeters link in the WordPress dashboard navigation menu (sidebar)
+2. Add, Edit, or Remove a Greeter (Greeter = welcome message)
+3. Set global settings in *Settings > WelcomeWP*
 
 == Screenshots ==
 
@@ -88,6 +126,19 @@ Also, the user can clear this information from browser any time using browser cl
 Please use a [support forum](https://wordpress.org/support/plugin/welcomewp/).
 
 == Changelog ==
+
+= 1.0.1 - July 21, 2022 =
+
+* Add: minified version for each stylesheet;
+* Add: onboarding functionality;
+* Add: minified version for each script;
+* Update: directory structure for styles;
+* Update: load minified version of back-end settings script when needed;
+* Update: display onboarding hint when plugin installed and activated;
+* Update: load minified version of front-end script when needed;
+* Update: documentation for installation;
+* Update: use WordPress selected color scheme for onboarding hints;
+* Update: display onboarding hints only when no messages have been created yet;
 
 = 1.0.0 - July 06, 2022 =
 

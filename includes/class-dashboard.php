@@ -6,7 +6,6 @@
  * @author     Taras Dashkevych
  * @since      1.0.0
 */
-
 class WelcomeWP_Dashboard {
     /**
 	 * Slug of the main settings page.
@@ -30,9 +29,29 @@ class WelcomeWP_Dashboard {
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-        add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-        add_action( 'admin_init', array( $this, 'register_settings' ) );
+        add_action( 'admin_menu',            array( $this, 'admin_menu' ) );
+        add_action( 'admin_init',            array( $this, 'register_settings' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+
+        add_filter( 'welcomewp-pointerplus_list', array( $this, 'init_onboarding' ), 10, 2 );
+    }
+
+    /**
+	 * Set up onboarding process.
+	 *
+	 * @since 1.0.1
+	 */
+    public function init_onboarding() {
+        return array(
+            $this->slug . '_settings' => array(
+                'selector'   => '#menu-posts-greeter',
+                'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
+                'text'       => esc_html__( 'The plugin is active. Now create a website welcome message using the Greeters functionality.', 'your-pointer-domain' ),
+                'width'      => 250,
+                'icon_class' => 'dashicons-nametag',
+                'pages'      => array( 'plugins.php' ),
+            ),
+        );
     }
 
     /**
@@ -42,6 +61,7 @@ class WelcomeWP_Dashboard {
      * @since 1.0.0
      */
     public function admin_enqueue_scripts() {
+        $suffix         = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
         $current_screen = get_current_screen();
 
         if ( ! strpos( $current_screen->base, $this->slug ) ) {
@@ -50,16 +70,16 @@ class WelcomeWP_Dashboard {
 
         wp_enqueue_style(
 			'welcomewp-admin-settings',
-			WELCOMEWP_PLUGIN_URL . 'assets/css/admin-settings.css',
+			WELCOMEWP_PLUGIN_URL . "assets/css/admin/settings{$suffix}.css",
 			array(),
-			'1.0.0'
+			'1.0.1'
 		);
         // Load JavaScript functionality of a message.
         wp_enqueue_script(
             'welcomewp-admin-settings',
-            WELCOMEWP_PLUGIN_URL . 'assets/js/admin/settings.js',
+            WELCOMEWP_PLUGIN_URL . "assets/js/admin/settings{$suffix}.js",
             array(),
-            '1.0.0',
+            '1.0.1',
             true
         );
     }

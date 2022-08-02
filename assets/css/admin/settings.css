@@ -1,0 +1,48 @@
+/* global form controls */
+.wwp-form-inline-control {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1em;
+}
+
+.wwp-description {
+    max-width: 50ch;
+}
+
+.wwp-cookie-expiration> :first-child {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+}
+
+.wwp-cookie-expiration+details {
+    -webkit-margin-before: 1em;
+    margin-block-start: 1em;
+}
+
+.wwp-clear-cache {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1em;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.wwp-form-notice {
+    display: none;
+}
+
+.wwp-form-notice[aria-hidden="false"] {
+    display: block;
+    font-weight: bold;
+}
+
+#wwp-clear-cache-updated {
+    color: green;
+}
+
+#wwp-clear-cache-error {
+    color: red;
+}

@@ -1,0 +1,98 @@
+/* default styles */
+.pointerplus {
+    --pointerplus-accent: #2271b1;
+}
+
+/* color themes: light */
+.admin-color-light .pointerplus {
+    --pointerplus-accent: #888888;
+}
+
+/* color themes: modern */
+.admin-color-modern .pointerplus {
+    --pointerplus-accent: #3858e9;
+}
+
+/* color themes: blue */
+.admin-color-blue .pointerplus {
+    --pointerplus-accent: #096484;
+}
+
+/* color themes: coffee */
+.admin-color-coffee .pointerplus {
+    --pointerplus-accent: #c7a589;
+}
+
+/* color themes: ectoplasm */
+.admin-color-ectoplasm .pointerplus {
+    --pointerplus-accent: #a3b745;
+}
+
+/* color themes: midnight */
+.admin-color-midnight .pointerplus {
+    --pointerplus-accent: #e14d43;
+}
+
+/* color themes: ocean */
+.admin-color-ocean .pointerplus {
+    --pointerplus-accent: #9ebaa0;
+}
+
+/* color themes: sunrise */
+.admin-color-sunrise .pointerplus {
+    --pointerplus-accent: #dd823b;
+}
+
+.pointerplus .pp-pointer-content {
+    padding: 0 0 10px;
+    position: relative;
+    font-size: 13px;
+    background: none repeat scroll 0 0 #FFF;
+    border: 1px solid #DFDFDF;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.075);
+}
+
+.pointerplus .pp-pointer-content h3 {
+    position: relative;
+    margin: -1px -1px 5px;
+    padding: 15px 18px 14px 60px;
+    border-width: 1px 1px medium;
+    border-style: solid solid none;
+    border-color: rgba(0, 0, 0, 0.075) rgba(0, 0, 0, 0.075);
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -o-border-image: none;
+    border-image: none;
+    line-height: 1.4em;
+    font-size: 14px;
+    color: #FFF;
+    background: none repeat scroll 0 0 var(--pointerplus-accent);
+}
+
+.pp-pointer-content p {
+    padding: 0 15px;
+}
+
+.pp-pointer-content h3:before {
+    background: none repeat scroll 0 0 #FFF;
+    border-radius: 50%;
+    color: var(--pointerplus-accent);
+    font: 20px/1.6 "dashicons";
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+}
+
+.pp-pointer-content .wp-pointer-buttons {
+    height: 28px;
+}
+
+.pp-pointer-content .wp-pointer-buttons .close {
+    top: 10px;
+}
