@@ -2,9 +2,9 @@
 Contributors: taskotr
 Author URI: https://www.tarascodes.com
 Requires at Least: 5.9
-Tested Up To: 6.0
-Tags: welcome message, greeting message, modal, message, note, alert, simple
-Stable tag: 1.0.0
+Tested Up To: 6.0.1
+Tags: welcome message, greeting message, modal, message, note, alert, notice message, announcements, sticky message, notification, conversion, marketing
+Stable tag: 1.0.1
 Requires PHP: 7.4
 Text Domain: welcomewp
 License: GPLv2 or later
@@ -18,7 +18,27 @@ WelcomeWP helps to display a welcome message on a website.
 
 The plugin uses native WordPress API to provide intuitive and secure experience of creating a website welcome message in a foreground, while keeping the website itself readable.
 
-Use a welcome message to communicate with your audience without being intrusive, and to elevate customer support, marketing, sales, etc.
+WelcomeWP can be useful for various needs:
+
+* Communicate with your audience without being intrusive
+* Increase user engagement on your website
+* Elevate customer support via custom notes and announcements
+* Boost sales and services of your business via promotions
+
+The plugin allows your welcome message to be expressed as a promotion, note, announcement, greeting, ect.
+
+[Demo #1](https://welcomewp.com/) | [Demo #2](https://welcomewp.com/introducing-welcomewp/)
+
+### Possible use-cases
+
+* Share links to social media, documentation, etc
+* Provide important announcements
+* Notify about terms and conditions changes
+* Introduce yourself to new website visitors
+* Greet website visitors
+* Inform about launch of new products or services
+* Offer time limited discount codes
+* Keep posted about COVID-19 updates
 
 == Installation ==
 
@@ -106,6 +126,19 @@ Also, the user can clear this information from browser any time using browser cl
 Please use a [support forum](https://wordpress.org/support/plugin/welcomewp/).
 
 == Changelog ==
+
+= 1.0.1 - July 21, 2022 =
+
+* Add: minified version for each stylesheet;
+* Add: onboarding functionality;
+* Add: minified version for each script;
+* Update: directory structure for styles;
+* Update: load minified version of back-end settings script when needed;
+* Update: display onboarding hint when plugin installed and activated;
+* Update: load minified version of front-end script when needed;
+* Update: documentation for installation;
+* Update: use WordPress selected color scheme for onboarding hints;
+* Update: display onboarding hints only when no messages have been created yet;
 
 = 1.0.0 - July 06, 2022 =
 

@@ -31,6 +31,6 @@
     font-weight: bold;
 }
 
-.post-new-php.post-type-greeter .pp-welcomewp-plugin_greeter {
+.post-new-php.post-type-greeter .pp-greeter_new {
     display: none !important;
 }
