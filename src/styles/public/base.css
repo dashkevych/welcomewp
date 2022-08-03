@@ -205,6 +205,12 @@
     color: var(--wwp--color--link);
 }
 
+#welcomewp-message {
+    & .welcomewp-message__close-button {
+        background: none;
+    }
+}
+
 /* states */
 #welcomewp-message[aria-hidden="true"] {
     display: none;
