@@ -3,7 +3,7 @@
     --wwp--color--text: #000000;
     --wwp--color--link: #007cba;
 
-    max-width: 340px;
+    max-width: 360px;
     max-height: 80vh;
     position: fixed;
     z-index: 999;
@@ -113,7 +113,6 @@
  * Active excerpt.
  */
 .welcomewp-message.has-excerpt .welcomewp-message__excerpt {
-    padding-inline-end: 1em;
     padding-inline-start: 0.125em;
     flex: 1 1 0%;
 }
@@ -126,6 +125,7 @@
     display: flex;
     gap: 1em;
     align-items: center;
+    line-height: 1.45;
 }
 
 /**
@@ -133,8 +133,8 @@
  */
 .welcomewp-message__header {
     font-weight: bold;
-    padding: var(--wp--style--block-gap, 1em);
-    line-height: 1.4;
+    padding-block: var(--wp--style--block-gap, 1em);
+    padding-inline: var(--wp--style--block-gap, 1em) calc( var(--wp--style--block-gap, 1em) + 12px );
 }
 
 .welcomewp-message__header::marker {
