@@ -6,6 +6,7 @@
     max-width: 340px;
     max-height: 80vh;
     position: fixed;
+    z-index: 999;
     background-color: var(--wwp--color--background);
     color: var(--wwp--color--text);
     border: 1px solid;
