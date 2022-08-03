@@ -158,7 +158,7 @@
  * Content
  */
 .welcomewp-message__content {
-    padding: var(--wp--style--block-gap, 1em);
+    padding: var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) 0;
 }
 
 /**
