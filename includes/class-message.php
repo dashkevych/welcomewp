@@ -82,7 +82,7 @@ class WelcomeWP_Message {
 			'welcomewp-base',
 			WELCOMEWP_PLUGIN_URL . "assets/css/public/base{$suffix}.css",
 			array(),
-			'1.0.1'
+			'1.0.2'
 		);
 
         // Load custom styles of a message.
