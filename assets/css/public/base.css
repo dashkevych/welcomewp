@@ -3,9 +3,10 @@
     --wwp--color--text: #000000;
     --wwp--color--link: #007cba;
 
-    max-width: 340px;
+    max-width: 360px;
     max-height: 80vh;
     position: fixed;
+    z-index: 999;
     background-color: var(--wwp--color--background);
     color: var(--wwp--color--text);
     border: 1px solid;
@@ -136,8 +137,6 @@
  */
 
 .welcomewp-message.has-excerpt .welcomewp-message__excerpt {
-    -webkit-padding-end: 1em;
-    padding-inline-end: 1em;
     -webkit-padding-start: 0.125em;
     padding-inline-start: 0.125em;
     -webkit-box-flex: 1;
@@ -158,6 +157,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    line-height: 1.45;
 }
 
 /**
@@ -166,9 +166,10 @@
 
 .welcomewp-message__header {
     font-weight: bold;
-    padding: 1em;
-    padding: var(--wp--style--block-gap, 1em);
-    line-height: 1.4;
+    padding-block: 1em;
+    padding-block: var(--wp--style--block-gap, 1em);
+    padding-inline: 1em calc(1em + 12px);
+    padding-inline: var(--wp--style--block-gap, 1em) calc(var(--wp--style--block-gap, 1em) + 12px);
 }
 
 .welcomewp-message__header::marker {
@@ -198,8 +199,8 @@
  */
 
 .welcomewp-message__content {
-    padding: 1em;
-    padding: var(--wp--style--block-gap, 1em);
+    padding: 1em 1em 0;
+    padding: var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) 0;
 }
 
 /**
@@ -256,6 +257,10 @@
 
 .welcomewp-message__close-button:hover {
     color: var(--wwp--color--link);
+}
+
+#welcomewp-message .welcomewp-message__close-button {
+    background: none;
 }
 
 /* states */
