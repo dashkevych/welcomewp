@@ -33,7 +33,7 @@ class WelcomeWP_Dashboard {
         add_action( 'admin_init',            array( $this, 'register_settings' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 
-        add_filter( 'welcomewp-pointerplus_list', array( $this, 'init_onboarding' ), 10, 2 );
+        add_filter( 'welcomewp-pointerplus_list', array( $this, 'init_onboarding' ) );
     }
 
     /**
@@ -41,16 +41,19 @@ class WelcomeWP_Dashboard {
 	 *
 	 * @since 1.0.1
 	 */
-    public function init_onboarding() {
-        return array(
-            $this->slug . '_settings' => array(
-                'selector'   => '#menu-posts-greeter',
-                'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
-                'text'       => esc_html__( 'The plugin is active. Now create a website welcome message using the Greeters functionality.', 'your-pointer-domain' ),
-                'width'      => 250,
-                'icon_class' => 'dashicons-nametag',
-                'pages'      => array( 'plugins.php' ),
-            ),
+    public function init_onboarding( $pointers ) {
+        return array_merge(
+            $pointers,
+            array(
+                $this->slug . '_settings' => array(
+                    'selector'   => '#menu-posts-greeter',
+                    'title'      => esc_html__( 'WelcomeWP', 'welcomewp' ),
+                    'text'       => esc_html__( 'The plugin is active. Use `Greeters` to create a website message.', 'welcomewp' ),
+                    'width'      => 250,
+                    'icon_class' => 'dashicons-nametag',
+                    'pages'      => array( 'plugins.php' ),
+                ),
+            )
         );
     }
 

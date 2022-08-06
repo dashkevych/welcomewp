@@ -4,7 +4,7 @@ Author URI: https://www.tarascodes.com
 Requires at Least: 5.9
 Tested Up To: 6.0.1
 Tags: welcome message, greeting message, modal, message, note, alert, notice message, announcements, sticky message, notification, conversion, marketing
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 7.4
 Text Domain: welcomewp
 License: GPLv2 or later
@@ -126,6 +126,14 @@ Also, the user can clear this information from browser any time using browser cl
 Please use a [support forum](https://wordpress.org/support/plugin/welcomewp/).
 
 == Changelog ==
+
+= 1.0.2 - August 06, 2022 =
+
+* Update: improve spacing in the footer area of a main content in a welcome message;
+* Update: improve spacing in the header area of a welcome message;
+* Fix: potential background issue in the close button of a welcome message;
+* Fix: missing onboarding help when plugin is installed;
+* Fix: overflow issue in a welcome message;
 
 = 1.0.1 - July 21, 2022 =
 
