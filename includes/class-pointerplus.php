@@ -30,6 +30,7 @@ class PointerPlus {
     if ( isset( $args[ 'prefix' ] ) ) {
         $this->prefix = $args[ 'prefix' ];
     }
+
     add_action( 'current_screen', array( $this, 'maybe_add_pointers' ) );
   }
 
@@ -41,25 +42,25 @@ class PointerPlus {
   function initial_pointers() {
     global $pagenow;
     $defaults = array(
-	  'class' => '',
-	  'width' => 300, //only fixed value
-	  'align' => 'middle',
-	  'edge' => 'left',
-	  'post_type' => array(),
-	  'pages' => array(),
-	  'icon_class' => ''
+        'class'      => '',
+        'width'      => 300, //only fixed value
+        'align'      => 'middle',
+        'edge'       => 'left',
+        'post_type'  => array(),
+        'pages'      => array(),
+        'icon_class' => ''
     );
-    $screen = get_current_screen();
-    $current_post_type = isset( $screen->post_type ) ? $screen->post_type : false;
-    $search_pt = false;
 
-    $pointers = apply_filters( $this->prefix . '-pointerplus_list', array(
-		// Pointers are added through the 'initial_pointerplus' filter
-		), $this->prefix );
+    $screen            = get_current_screen();
+    $current_post_type = isset( $screen->post_type ) ? $screen->post_type : false;
+    $search_pt         = false;
+
+    // Pointers are added through the 'initial_pointerplus' filter
+    $pointers = apply_filters( $this->prefix . '-pointerplus_list', array(), $this->prefix );
 
     foreach ( $pointers as $key => $pointer ) {
         $pointers[ $key ] = wp_parse_args( $pointer, $defaults );
-        $search_pt = false;
+        $search_pt        = false;
         // Clean from null ecc
         $pointers[ $key ][ 'post_type' ] = array_filter( $pointers[ $key ][ 'post_type' ] );
         if ( !empty( $pointers[ $key ][ 'post_type' ] ) ) {
@@ -117,18 +118,19 @@ class PointerPlus {
    * @since 1.0.0
    */
   function maybe_add_pointers() {
-    // Get default pointers that we want to create
+    // Get default pointers that we want to create.
     $default_keys = $this->initial_pointers();
 
-    // Get pointers dismissed by user
+    // Get pointers dismissed by user.
     $dismissed = explode( ',', get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
 
-    // Check that our pointers haven't been dismissed already
+    // Check that our pointers haven't been dismissed already.
     $diff = array_diff_key( $default_keys, array_combine( $dismissed, $dismissed ) );
 
     // If we have some pointers to show, save them and start enqueuing assets to display them
-    if ( !empty( $diff ) ) {
+    if ( ! empty( $diff ) ) {
         $this->pointers = $diff;
+
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_assets' ) );
 
         foreach ( $diff as $pointer ) {
@@ -137,6 +139,7 @@ class PointerPlus {
             }
         }
     }
+
     $this->pointers[ 'l10n' ] = array( 'next' => __( 'Next' ) );
   }
 
