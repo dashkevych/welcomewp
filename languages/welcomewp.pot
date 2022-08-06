@@ -2,28 +2,28 @@
 # This file is distributed under the same license as the WelcomeWP plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: WelcomeWP 1.0.0\n"
+"Project-Id-Version: WelcomeWP 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/welcomewp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-21T02:02:22+00:00\n"
+"POT-Creation-Date: 2022-08-06T19:02:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: welcomewp\n"
 
 #. Plugin Name of the plugin
-#: includes/class-dashboard.php:48
-#: includes/class-dashboard.php:95
+#: includes/class-dashboard.php:50
+#: includes/class-dashboard.php:98
 #: includes/class-greeter.php:266
-#: includes/class-greeter.php:750
-#: includes/class-greeter.php:759
-#: includes/class-greeter.php:771
-#: includes/class-greeter.php:784
-#: includes/class-greeter.php:797
-#: includes/class-greeter.php:810
+#: includes/class-greeter.php:752
+#: includes/class-greeter.php:761
+#: includes/class-greeter.php:773
+#: includes/class-greeter.php:786
+#: includes/class-greeter.php:799
+#: includes/class-greeter.php:812
 msgid "WelcomeWP"
 msgstr ""
 
@@ -39,64 +39,68 @@ msgstr ""
 msgid "https://tarascodes.com"
 msgstr ""
 
-#: includes/class-dashboard.php:94
-#: includes/class-dashboard.php:278
+#: includes/class-dashboard.php:51
+msgid "The plugin is active. Use `Greeters` to create a website message."
+msgstr ""
+
+#: includes/class-dashboard.php:97
+#: includes/class-dashboard.php:281
 msgid "WelcomeWP Settings"
 msgstr ""
 
-#: includes/class-dashboard.php:124
+#: includes/class-dashboard.php:127
 msgid "Greeter"
 msgstr ""
 
-#: includes/class-dashboard.php:131
+#: includes/class-dashboard.php:134
 msgid "Cookie expires in:"
 msgstr ""
 
-#: includes/class-dashboard.php:172
+#: includes/class-dashboard.php:175
 msgid "Minutes"
 msgstr ""
 
-#: includes/class-dashboard.php:177
+#: includes/class-dashboard.php:180
 msgid "Hours"
 msgstr ""
 
-#: includes/class-dashboard.php:182
+#: includes/class-dashboard.php:185
 msgid "Days"
 msgstr ""
 
-#: includes/class-dashboard.php:187
+#: includes/class-dashboard.php:190
 msgid "Months"
 msgstr ""
 
-#: includes/class-dashboard.php:193
+#: includes/class-dashboard.php:196
 msgid "What does it mean?"
 msgstr ""
 
-#: includes/class-dashboard.php:194
+#: includes/class-dashboard.php:197
 msgid "After closing a message, the browser uses a saved piece of data (cookie) to prevent displaying the message again for a set period of time, configured via this option."
 msgstr ""
 
-#: includes/class-dashboard.php:201
+#: includes/class-dashboard.php:204
 msgid "Clear cookie"
 msgstr ""
 
-#: includes/class-dashboard.php:203
+#: includes/class-dashboard.php:206
 msgid "Nothing found"
 msgstr ""
 
-#: includes/class-dashboard.php:204
+#: includes/class-dashboard.php:207
 msgid "Done"
 msgstr ""
 
-#: includes/class-dashboard.php:205
+#: includes/class-dashboard.php:208
 msgid "Error"
 msgstr ""
 
-#: includes/class-dashboard.php:207
+#: includes/class-dashboard.php:210
 msgid "This option clears message cookie only for you, and only on a browser you are currently using."
 msgstr ""
 
-#: includes/class-dashboard.php:266
+#: includes/class-dashboard.php:269
 msgid "Here you can set global options for a WelcomeWP greeter, which delivers a message to site visitors."
 msgstr ""
 
@@ -198,27 +202,27 @@ msgstr ""
 msgid "Link color"
 msgstr ""
 
-#: includes/class-greeter.php:751
-msgid "Add New to open the Editor for a welcome message."
+#: includes/class-greeter.php:753
+msgid "Click `Add New` to start creating a welcome message."
 msgstr ""
 
-#: includes/class-greeter.php:760
+#: includes/class-greeter.php:762
 msgid "Title serves as a name for your message. This title is not shown for website visitors. It is only for your own records."
 msgstr ""
 
-#: includes/class-greeter.php:772
+#: includes/class-greeter.php:774
 msgid "This is a main content of your message. The message without main content does not appear on a website."
 msgstr ""
 
-#: includes/class-greeter.php:785
+#: includes/class-greeter.php:787
 msgid "(Optional): This is a summary of your message. Use summary to add an accordion (toggle) functionality to a message."
 msgstr ""
 
-#: includes/class-greeter.php:798
+#: includes/class-greeter.php:800
 msgid "(Optional): This is a thumbnail of your message. Use thumbnail to add an accordion (toggle) functionality to a message."
 msgstr ""
 
-#: includes/class-greeter.php:811
+#: includes/class-greeter.php:813
 msgid "Additional options of a message. Use them to configure visibility of your message."
 msgstr ""
 
