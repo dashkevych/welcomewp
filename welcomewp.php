@@ -4,7 +4,7 @@
  * Description: A simple WordPress plugin to create welcome messages.
  * Author:      Taras Dashkevych
  * Author URI:  https://tarascodes.com
- * Version:     1.0.2
+ * Version:     1.0.3
  * Text Domain: welcomewp
  * Domain Path: languages
  *
@@ -53,7 +53,7 @@ if ( ! class_exists( 'WelcomeWP' ) ) :
          * @since 1.0.0
          * @var sting
          */
-        public $version = '1.0.2';
+        public $version = '1.0.3';
 
         /**
          * Main WelcomeWP Instance.

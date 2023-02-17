@@ -2,9 +2,9 @@
 Contributors: taskotr
 Author URI: https://www.tarascodes.com
 Requires at Least: 5.9
-Tested Up To: 6.0.1
+Tested Up To: 6.1
 Tags: welcome message, greeting message, modal, message, note, alert, notice message, announcements, sticky message, notification, conversion, marketing
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 7.4
 Text Domain: welcomewp
 License: GPLv2 or later
@@ -126,6 +126,11 @@ Also, the user can clear this information from browser any time using browser cl
 Please use a [support forum](https://wordpress.org/support/plugin/welcomewp/).
 
 == Changelog ==
+
+= 1.0.3 - February 17, 2023 =
+
+* Update: bump up Tested Up To version;
+* Fix: style inconsistency in button element in plugin settings page;
 
 = 1.0.2 - August 06, 2022 =
 
