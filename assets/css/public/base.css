@@ -7,7 +7,9 @@
     max-height: 80vh;
     position: fixed;
     z-index: 999;
+    background-color: #ffffff;
     background-color: var(--wwp--color--background);
+    color: #000000;
     color: var(--wwp--color--text);
     border: 1px solid;
     -webkit-animation: slide 0.5s forwards;
