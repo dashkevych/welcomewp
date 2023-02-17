@@ -201,7 +201,7 @@ class WelcomeWP_Dashboard {
 
         <div>
             <p class="wwp-clear-cache">
-                <button id="wwp-clear-cache-button" type="button"><?php esc_html_e( 'Clear cookie', 'welcomewp' ); ?></button>
+                <button id="wwp-clear-cache-button" class="button button-secondary" type="button"><?php esc_html_e( 'Clear cookie', 'welcomewp' ); ?></button>
 
                 <span id="wwp-clear-cache-404" class="wwp-form-notice" aria-hidden="true"><?php esc_html_e( 'Nothing found', 'welcomewp' ); ?></span>
                 <span id="wwp-clear-cache-updated" class="wwp-form-notice" aria-hidden="true"><?php esc_html_e( 'Done', 'welcomewp' ); ?></span>
