@@ -32,24 +32,26 @@
             }
 
             // Find a cookie saved by the plugin.
-            cookies.forEach(function(item, index) {
-                if (!item) {
-                    return;
+            cookies.forEach(
+                function(item, index) {
+                    if (!item) {
+                        return;
+                    }
+
+                    let cookie = decodeURIComponent(item);
+                    const isFound = cookie.match(/welcomewp-message-/g);
+
+                    // Remove a cookie saved by the plugin.
+                    if (isFound) {
+                        let name = cookie.split('=');
+                        name = name[0].trim();
+
+                        document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
+                        isUpdated = true;
+                    }
                 }
-
-                let cookie = decodeURIComponent(item);
-                const isFound = cookie.match(/welcomewp-message-/g);
-
-                // Remove a cookie saved by the plugin.
-                if (isFound) {
-                    let name = cookie.split('=');
-                    name = name[0].trim();
-
-                    document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-
-                    isUpdated = true;
-                }
-            });
+            );
 
             // Display success label.
             if (isUpdated) {
