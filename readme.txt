@@ -2,9 +2,9 @@
 Contributors: taskotr
 Author URI: https://www.tarascodes.com
 Requires at Least: 5.9
-Tested Up To: 6.1
+Tested Up To: 6.3
 Tags: welcome message, greeting message, modal, message, note, alert, notice message, announcements, sticky message, notification, conversion, marketing
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 7.4
 Text Domain: welcomewp
 License: GPLv2 or later
@@ -26,8 +26,6 @@ WelcomeWP can be useful for various needs:
 * Boost sales and services of your business via promotions
 
 The plugin allows your welcome message to be expressed as a promotion, note, announcement, greeting, ect.
-
-[Demo #1](https://welcomewp.com/) | [Demo #2](https://welcomewp.com/introducing-welcomewp/)
 
 ### Possible use-cases
 
@@ -126,6 +124,11 @@ Also, the user can clear this information from browser any time using browser cl
 Please use a [support forum](https://wordpress.org/support/plugin/welcomewp/).
 
 == Changelog ==
+
+= 1.0.4 - August 24, 2023 =
+
+* Update formatting in files;
+* Fix: undefined variable issue in Search archives;
 
 = 1.0.3 - February 17, 2023 =
 
