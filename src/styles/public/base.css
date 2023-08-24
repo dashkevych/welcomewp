@@ -1,223 +1,223 @@
 .welcomewp-message {
-    --wwp--color--background: #ffffff;
-    --wwp--color--text: #000000;
-    --wwp--color--link: #007cba;
+	--wwp--color--background: #ffffff;
+	--wwp--color--text: #000000;
+	--wwp--color--link: #007cba;
 
-    max-width: 360px;
-    max-height: 80vh;
-    position: fixed;
-    z-index: 999;
-    background-color: var(--wwp--color--background);
-    color: var(--wwp--color--text);
-    border: 1px solid;
-    animation: slide 0.5s forwards;
-    animation-delay: 1s;
+	max-width: 360px;
+	max-height: 80vh;
+	position: fixed;
+	z-index: 999;
+	background-color: var(--wwp--color--background);
+	color: var(--wwp--color--text);
+	border: 1px solid;
+	animation: slide 0.5s forwards;
+	animation-delay: 1s;
 
-    overflow: scroll;
-    overflow-x: hidden;
+	overflow: scroll;
+	overflow-x: hidden;
 }
 
 [class*="welcomewp-message__"] > :first-child {
-    margin-block-start: 0;
+	margin-block-start: 0;
 }
 
 [class*="welcomewp-message__"] > :last-child {
-    margin-block-end: 0;
+	margin-block-end: 0;
 }
 
 .welcomewp-message > details[open] > summary {
-    border-block-end: 1px solid;
+	border-block-end: 1px solid;
 }
 
 .welcomewp-message > details:not([open]) > summary {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .welcomewp-message.has-thumbnail > details[open] .welcomewp-message__header {
-    display: none;
+	display: none;
 }
 
 /**
  * Link: Global
  */
 .welcomewp-message a {
-    color: var(--wwp--color--link);
+	color: var(--wwp--color--link);
 }
 
 .welcomewp-message a:hover {
-    color: inherit;
+	color: inherit;
 }
 
 /**
  * Utilities: Hiding class, making content visible only to screen readers but not visually
  */
 .sr-only:not(:focus):not(:active) {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
 }
 
 /**
  * Position: Global
  */
 @media screen and (max-width: 782px) {
-    #welcomewp-message[data-message-position="left-bottom"],
-    #welcomewp-message[data-message-position="right-bottom"] {
-        inset: auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em);
-        max-width: 100%;
-    }
+	#welcomewp-message[data-message-position="left-bottom"],
+	#welcomewp-message[data-message-position="right-bottom"] {
+		inset: auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em);
+		max-width: 100%;
+	}
 }
 
 /**
  * Position: Left
  */
 .welcomewp-message[data-message-position="left-bottom"] {
-    inset: auto auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em);
+	inset: auto auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em);
 }
 
 .welcomewp-message[data-message-position="left-bottom"] .welcomewp-message__footer {
-    justify-content: flex-start;
+	justify-content: flex-start;
 }
 
 @media screen and (min-width: 782px) {
-    .welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__thumb {
-        order: 2;
-    }
+	.welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__thumb {
+		order: 2;
+	}
 
-    .welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__excerpt {
-        order: 1;
-        padding-inline: 1em 0;
-    }
+	.welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__excerpt {
+		order: 1;
+		padding-inline: 1em 0;
+	}
 
-    .welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__header .welcomewp-message__close-button {
-        inset-inline: 0.5em auto;
-    }
+	.welcomewp-message[data-message-position="left-bottom"].has-thumbnail.has-excerpt .welcomewp-message__header .welcomewp-message__close-button {
+		inset-inline: 0.5em auto;
+	}
 }
 
 /**
  * Position: Right
  */
 .welcomewp-message[data-message-position="right-bottom"] {
-    inset: auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) auto;
+	inset: auto var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) auto;
 }
 
 .welcomewp-message[data-message-position="right-bottom"] .welcomewp-message__footer {
-    justify-content: flex-end;
+	justify-content: flex-end;
 }
 
 /**
  * Active excerpt.
  */
 .welcomewp-message.has-excerpt .welcomewp-message__excerpt {
-    padding-inline-start: 0.125em;
-    flex: 1 1 0%;
+	padding-inline-start: 0.125em;
+	flex: 1 1 0%;
 }
 
 /**
  * Active thumbnail + excerpt.
  */
 .welcomewp-message.has-thumbnail.has-excerpt .welcomewp-message__header {
-    list-style: none;
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    line-height: 1.45;
+	list-style: none;
+	display: flex;
+	gap: 1em;
+	align-items: center;
+	line-height: 1.45;
 }
 
 /**
  * Header
  */
 .welcomewp-message__header {
-    font-weight: bold;
-    padding-block: var(--wp--style--block-gap, 1em);
-    padding-inline: var(--wp--style--block-gap, 1em) calc( var(--wp--style--block-gap, 1em) + 12px );
+	font-weight: bold;
+	padding-block: var(--wp--style--block-gap, 1em);
+	padding-inline: var(--wp--style--block-gap, 1em) calc( var(--wp--style--block-gap, 1em) + 12px );
 }
 
 .welcomewp-message__header::marker {
-    margin-inline-end: 1em;
+	margin-inline-end: 1em;
 }
 
 .welcomewp-message.has-thumbnail:not(.has-excerpt) .welcomewp-message__header {
-    padding: calc( var(--wp--style--block-gap, 1em) / 4 );
+	padding: calc( var(--wp--style--block-gap, 1em) / 4 );
 }
 
 .welcomewp-message__header .welcomewp-message__close-button {
-    position: absolute;
-    inset-block-start: 0.5em;
-    inset-inline-end: 0.5em;
-    z-index: 10;
-    align-self: flex-start;
-    padding: 0.125em;
-    margin-inline-start: auto;
+	position: absolute;
+	inset-block-start: 0.5em;
+	inset-inline-end: 0.5em;
+	z-index: 10;
+	align-self: flex-start;
+	padding: 0.125em;
+	margin-inline-start: auto;
 }
 
 /**
  * Content
  */
 .welcomewp-message__content {
-    padding: var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) 0;
+	padding: var(--wp--style--block-gap, 1em) var(--wp--style--block-gap, 1em) 0;
 }
 
 /**
  * Footer
  */
 .welcomewp-message__footer {
-    padding: var(--wp--style--block-gap, 1em);
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
+	padding: var(--wp--style--block-gap, 1em);
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
 }
 
 /**
  * Thumbnail
  */
 .welcomewp-message.has-thumbnail .welcomewp-message__header::-webkit-details-marker {
-    display: none;
+	display: none;
 }
 
 .welcomewp-message__thumb {
-    margin: 0;
-    line-height: 0;
+	margin: 0;
+	line-height: 0;
 }
 
 /**
  * Close button
  */
 .welcomewp-message__close-button {
-    border: none;
-    background-color: transparent;
-    font-family: inherit;
-    padding: 0;
-    cursor: pointer;
-    font-size: inherit;
-    color: inherit;
-    font-weight: bolder;
-    display: flex;
-    align-items: center;
-    line-height: 1;
-    gap: 0.5em
+	border: none;
+	background-color: transparent;
+	font-family: inherit;
+	padding: 0;
+	cursor: pointer;
+	font-size: inherit;
+	color: inherit;
+	font-weight: bolder;
+	display: flex;
+	align-items: center;
+	line-height: 1;
+	gap: 0.5em
 }
 
 .welcomewp-message__close-button:hover {
-    color: var(--wwp--color--link);
+	color: var(--wwp--color--link);
 }
 
 #welcomewp-message {
-    & .welcomewp-message__close-button {
-        background: none;
-    }
+	& .welcomewp-message__close-button {
+		background: none;
+	}
 }
 
 /* states */
 #welcomewp-message[aria-hidden="true"] {
-    display: none;
+	display: none;
 }
 
 /* active admin bar */
 .admin-bar .welcomewp-message {
-    margin-block-start: calc( 32px + var(--wp--style--block-gap, 1em) );
+	margin-block-start: calc( 32px + var(--wp--style--block-gap, 1em) );
 }
